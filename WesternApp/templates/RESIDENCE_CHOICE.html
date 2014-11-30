@@ -1,0 +1,13 @@
+	RESIDENCE_CHOICE
+	<form action="{% url 'pickresidence' %}" method="POST" >{% csrf_token %}
+	<table>
+	<tr><td>Residence Name: </td>
+		<td>
+			<select name="dropdown1">
+				{% for residencename in residencename %}
+					<option value="{{ residencename.rname }}">{{ residencename.rname}}</option>
+				{% endfor %}
+			</select>		
+		</td>
+	<td><input type="submit" value="Choose Residence" /></td></tr>
+	</table>			
